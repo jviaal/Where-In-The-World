@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 
 import Countries from "./components/pages/Countries";
 import CountryDetails from "./components/pages/CountryDetails";
@@ -72,7 +72,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <HashRouter basename="/">
       <GlobalStyle theme={themes} />
       <>
         <PopupNotification popupStat={popupStat} setPopupStat={setPopupStat} />
@@ -95,7 +95,7 @@ function App() {
           />
         </Main>
       </>
-    </Router>
+    </HashRouter>
   );
 }
 
